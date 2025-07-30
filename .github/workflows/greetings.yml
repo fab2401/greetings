@@ -1,0 +1,13 @@
+name: Greetings
+
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  echo-message:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Exécuter un echo
+        run: echo "Une nouvelle issue a été ouverte !"
