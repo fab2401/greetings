@@ -23,3 +23,8 @@ jobs:
         run: mvn clean package
       - name: List target directory
         run: ls -lRt target
+      - name: upload artifact  
+        uses: actions/upload-artifact@v4
+        with:
+          name: Package
+          path: target/*.jar
