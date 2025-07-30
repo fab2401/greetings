@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Afficher le nom de l'utilisateur
-        run: echo "Lutilisateur qui a ouvert lissue est ${{ github.event.issue.user.login }}"
+        run: echo "L\'utilisateur qui a ouvert l\'issue est ${{ github.event.issue.user.login }}"
 
       - name: Ajouter un commentaire sur l'issue
         uses: actions/github-script@v6
