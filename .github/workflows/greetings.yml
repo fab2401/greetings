@@ -12,10 +12,9 @@ jobs:
       - name: Afficher le nom de l'utilisateur
         run: echo "L\'utilisateur qui a ouvert l\'issue est ${{ github.event.issue.user.login }}"
 
-    steps:
       - name: premiere action
       - uses: actions/first-interaction@v1
-      with:
-        repo-token: ${{ secrets.GITHUB_TOKEN }}
-        issue-message: "Message that will be displayed on users' first issue"
-        pr-message: "Message that will be displayed on users' first pull request"
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          issue-message: "Message that will be displayed on users' first issue"
+          pr-message: "Message that will be displayed on users' first pull request"
