@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: demo    
+        working-directory: demo/demo    
     steps:
       - name: Checkout this repository
         uses: actions/checkout@v4
