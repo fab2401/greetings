@@ -9,5 +9,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Exécuter un echo
-        run: echo "Une nouvelle issue a été ouverte !"
+      - name: Afficher le nom de l'utilisateur
+        run: echo "L'utilisateur qui a ouvert l'issue est : ${{ github.event.issue.user.login }}"
+
+      - name: Ajouter un commentaire sur l'issue
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const issueNumber = context.issue.number;
+            const comment = "Merci, votre issue a bien été prise en compte !";
+            await github.issues.createComment({
+              ...context.repo,
+              issue_number: issueNumber,
+              body: comment,
+            });
