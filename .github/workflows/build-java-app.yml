@@ -1,0 +1,13 @@
+name: Build Java app
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  checkout-repo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout this repository
+        uses: actions/checkout@v4
