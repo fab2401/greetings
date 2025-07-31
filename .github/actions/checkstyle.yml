@@ -1,0 +1,18 @@
+name: "Composite action to checkstyle"
+description: "A composite action to run Checkstyle analysis"
+
+inputs:
+  skip-tests:
+    description: "skip tests"
+    required: false
+    default: false
+  working-directory:
+    required: false
+    default: ''
+
+runs:
+  using: "composite"
+  steps:
+    - name: Build with Maven
+      run: mvn checkstyle:checkstyle  
+      working-directory: ${{ inputs.working-directory }}

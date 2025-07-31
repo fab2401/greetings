@@ -1,0 +1,26 @@
+name: Build Java app
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      packages: write
+    defaults:
+      run:
+        working-directory: demo/demo
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up JDK 21
+      uses: actions/setup-java@v4
+      with:
+        java-version: '21'
+        distribution: 'temurin'
+        cache: maven
+    - name: Run Code Quality Action
+      id: checkstyle
+      uses: ./.github/actions/checkstyle
+      with:
+        working-directory: demo/demo
