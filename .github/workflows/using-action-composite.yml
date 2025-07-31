@@ -1,4 +1,4 @@
-name: Build Java app
+name: Using composite action
 
 on:
   workflow_dispatch:
