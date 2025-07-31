@@ -22,5 +22,3 @@ jobs:
     - name: Run Code Quality Action
       id: checkstyle
       uses: ./.github/actions/checkstyle
-      with:
-        working-directory: demo/demo

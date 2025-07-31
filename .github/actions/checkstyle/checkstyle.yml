@@ -6,9 +6,6 @@ inputs:
     description: "skip tests"
     required: false
     default: false
-  working-directory:
-    required: false
-    default: ''
 
 runs:
   using: "composite"
@@ -17,4 +14,3 @@ runs:
       run: ls
     - name: Build with Maven
       run: mvn checkstyle:checkstyle  
-      working-directory: ${{ inputs.working-directory }}
